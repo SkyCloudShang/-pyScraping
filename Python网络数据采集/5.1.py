@@ -19,6 +19,7 @@ def getAbsoluteURL(baseUrl,source):
         return None
     return url
 
+#得到目录
 def getDownloadPath(baseUrl,absoluteUrl,downloadDirectory):
     path=absoluteUrl.replace("www.","")
     path=path.replace(baseUrl,"")
@@ -26,7 +27,7 @@ def getDownloadPath(baseUrl,absoluteUrl,downloadDirectory):
     directory=os.path.dirname(path)
     if not os.path.exists(directory):
         os.makedirs(directory)
-    return 1
+    return path
 
 html=urlopen("http://www.pythonscraping.com")
 bsObj=BeautifulSoup(html,"lxml")
